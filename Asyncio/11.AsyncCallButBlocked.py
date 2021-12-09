@@ -10,7 +10,7 @@ async def do_something_else():
     while i <= 3:
         currentTime = time.strftime("%Y-%m-%d %H:%M:%S", time.localtime())
         print('{}   do something else {}'.format(currentTime, i))
-        time.sleep(1)
+        await asyncio.sleep(1)
         i += 1
 
 
