@@ -11,7 +11,7 @@ def get_html(times):
 
 executor = ThreadPoolExecutor(max_workers=2)
 urls = [3, 2, 4]  # 并不是真的url
-all_task = [executor.submit(get_html, (url)) for url in urls]
+all_task = [executor.submit(get_html, url) for url in urls]
 
 for future in as_completed(all_task):
     print(f'{future} finished')

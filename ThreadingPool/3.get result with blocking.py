@@ -12,8 +12,8 @@ def get_html(times):
 executor = ThreadPoolExecutor(max_workers=1)
 # 通过submit函数提交执行的函数到线程池中，submit函数立即返回，不阻塞
 start = time.time()
-task1 = executor.submit(get_html, (2))
-task2 = executor.submit(get_html, (1))
+task1 = executor.submit(get_html, 2)
+task2 = executor.submit(get_html, 1)
 print(task1.result())
 print(f'time from start on task1：{time.time() - start}')
 print(task2.result())
