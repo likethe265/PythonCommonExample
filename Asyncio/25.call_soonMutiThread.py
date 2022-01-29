@@ -19,5 +19,7 @@ new_loop = asyncio.new_event_loop()
 t = Thread(target=start_loop, args=(new_loop,))
 t.start()
 
-new_loop.call_soon_threadsafe(more_work, 6)
 new_loop.call_soon_threadsafe(more_work, 3)
+print('3')
+new_loop.call_soon_threadsafe(more_work, 2)
+print('2')

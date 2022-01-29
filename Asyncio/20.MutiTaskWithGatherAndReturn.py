@@ -4,7 +4,7 @@ import asyncio
 
 async def func1(i):
     print(f"协程函数{i}马上开始执行。")
-    await asyncio.sleep(2)
+    await asyncio.sleep(i)
     return i
 
 
