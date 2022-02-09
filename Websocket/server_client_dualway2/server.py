@@ -40,10 +40,6 @@ class WebsocketServer:
             else:
                 raise e
 
-    async def clientHandlerWrapper(self, websocket, path):
-        tasks = [self.clientHandler(websocket, path), self.eventGenerator()]
-        await asyncio.gather(*tasks)
-
 
 wss = WebsocketServer()
 start_server = websockets.serve(wss.clientHandler, 'localhost', 8989)
